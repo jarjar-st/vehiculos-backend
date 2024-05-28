@@ -26,4 +26,19 @@ export class VehiculoService {
   async findAll() {
     return await this.prisma.vehiculo.findMany();
   }
+
+  async update(id: string, data: CreateVehiculoDto) {
+    return await this.prisma.vehiculo.update({
+      where: { id },
+      data: {
+        ...data,
+      },
+    });
+  }
+
+  async delete(id: string) {
+    return await this.prisma.vehiculo.delete({
+      where: { id },
+    });
+  }
 }
