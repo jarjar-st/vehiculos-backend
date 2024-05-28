@@ -13,4 +13,9 @@ export class VehiculoController {
   async getVehiculoId(@Param('id') id: string) {
     return await this.vehiculoService.findById(id);
   }
+
+  @Get()
+  async getVehiculos() {
+    return await this.vehiculoService.findAll();
+  }
 }

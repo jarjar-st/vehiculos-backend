@@ -22,4 +22,8 @@ export class VehiculoService {
       },
     });
   }
+
+  async findAll() {
+    return await this.prisma.vehiculo.findMany();
+  }
 }
