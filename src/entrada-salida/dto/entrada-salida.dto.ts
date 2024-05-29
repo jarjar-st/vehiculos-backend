@@ -1,4 +1,4 @@
-import { IsDate, IsNumber, IsString } from 'class-validator';
+import { IsDate, IsString } from 'class-validator';
 
 export class CreateEntradaSalidaDto {
   @IsString()
@@ -8,11 +8,14 @@ export class CreateEntradaSalidaDto {
   nombreConductor: string;
 
   @IsDate()
-  fecha: Date;
+  fechaEntrada: Date;
+
+  @IsDate()
+  fechaSalida: Date;
 
   @IsString()
   hora: string;
 
-  @IsNumber()
-  kilometraje: number;
+  @IsString()
+  kilometraje: string;
 }

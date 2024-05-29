@@ -29,8 +29,9 @@ model EntradaSalida {
   id          Int      @id @default(autoincrement())
   vehiculoId  String
   nombreConductor String
-  fecha        DateTime
+  fechaEntrada        DateTime
+  fechaSalida        DateTime
   hora         String
-  kilometraje  Float
+  kilometraje  String
   Vehiculo     Vehiculo  @relation(fields: [vehiculoId], references: [id])
 }

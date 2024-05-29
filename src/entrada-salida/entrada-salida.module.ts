@@ -7,4 +7,4 @@ import { EntradaSalidaController } from './entrada-salida.controller';
   providers: [EntradaSalidaService, PrismaService],
   controllers: [EntradaSalidaController],
 })
-export class VehiculoModule {}
+export class EntradaSalidaModule {}

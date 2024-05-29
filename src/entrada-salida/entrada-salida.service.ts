@@ -7,12 +7,12 @@ export class EntradaSalidaService {
   constructor(private prisma: PrismaService) {}
 
   async create(dto: CreateEntradaSalidaDto) {
-    const newVehiculo = await this.prisma.entradaSalida.create({
+    const newEntradaSalida = await this.prisma.entradaSalida.create({
       data: {
         ...dto,
       },
     });
-    return newVehiculo;
+    return newEntradaSalida;
   }
 
   async findById(id: number) {
@@ -23,8 +23,12 @@ export class EntradaSalidaService {
     });
   }
 
-  async findAll() {
-    return await this.prisma.entradaSalida.findMany();
+  async getAll() {
+    return this.prisma.entradaSalida.findMany({
+      include: {
+        Vehiculo: true,
+      },
+    });
   }
 
   async update(id: number, data: CreateEntradaSalidaDto) {

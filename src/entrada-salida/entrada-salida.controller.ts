@@ -24,7 +24,7 @@ export class EntradaSalidaController {
 
   @Get()
   async getEntradaSalida() {
-    return await this.entradaSalidaService.findAll();
+    return await this.entradaSalidaService.getAll();
   }
 
   @Put(':id')
